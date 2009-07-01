@@ -16,10 +16,10 @@ INFO
       m.directory 'spec/mailers'
       m.directory 'spec/matchers'
       m.directory 'spec/spec_helpers'
-      m.file      'spec/spec_helpers/common.rb',          'spec_helpers/common.rb'
-      m.file      'spec/spec_helpers/model.rb',           'spec_helpers/model.rb'
-      m.file      'spec/spec_helpers/view.rb',            'spec_helpers/view.rb'
-      m.file      'spec/spec_helpers/controller.rb',      'spec_helpers/controller.rb'
+      m.file      'spec_helpers/common.rb',       'spec/spec_helpers/common.rb'
+      m.file      'spec_helpers/model.rb',        'spec/spec_helpers/model.rb'
+      m.file      'spec_helpers/view.rb',         'spec/spec_helpers/view.rb'
+      m.file      'spec_helpers/controller.rb',   'spec/spec_helpers/controller.rb'
     end
   end
   
