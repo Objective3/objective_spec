@@ -8,7 +8,6 @@ will need to add require 'objective_spec' to your spec/spec_helper.rb file
 to load the library.
 
 INFO
-    end
     super
   end
   
