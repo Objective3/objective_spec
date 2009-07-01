@@ -1,0 +1,6 @@
+= TODO
+  * Write generator for spec_helpers
+  * Write generator for matchers
+  * Write generator for mailer specs
+  * Add harness for observer specs
+  * Write generator for observer specs
