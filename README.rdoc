@@ -1,4 +1,4 @@
-Objective Spec
+= Objective Spec
 Author: Blake Watters <blake@objective3.com>
 
 Additional RSpec testing goodness for Rails from Objective 3.
@@ -7,4 +7,7 @@ Includes:
   * An example group for testing Mailers
   * Infrastructure for matchers and spec_helpers
   * Disable asset timestamping during spec runs
-  
+
+== Copyright
+
+Copyright (c) 2009 Objective 3. See LICENSE for details.
