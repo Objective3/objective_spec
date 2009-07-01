@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{objective_spec}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Blake Watters"]
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "lib/objective_spec/mailer_example_group.rb",
      "lib/objective_spec/matchers.rb",
      "lib/objective_spec/spec_helpers.rb",
+     "objective_spec.gemspec",
      "spec/objective_spec_spec.rb",
      "spec/spec_helper.rb"
   ]
