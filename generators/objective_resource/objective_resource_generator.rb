@@ -58,7 +58,6 @@ class ObjectiveResourceGenerator < Rails::Generator::NamedBase
       m.directory(File.join('spec/helpers', class_path))
       m.directory(File.join('spec/models', class_path))
       m.directory File.join('spec/views', controller_class_path, controller_file_name)
-      m.directory(File.join('spec/fixtures', class_path))
       
       scaffold_views.each do |action|
         m.template(
@@ -77,9 +76,9 @@ class ObjectiveResourceGenerator < Rails::Generator::NamedBase
       m.template('rspec/unit_spec.rb',        File.join('spec/models',      class_path, "#{file_name}_spec.rb"))
       
       #Use Factories instead of fixtures
-      model_factory = "\n\nFactory.define(:#{model_name}) do |f|\n"
+      model_factory = "\n\nFactory.define(:#{file_name}) do |f|\n"
       for attribute in attributes
-        model_factory << "#{attribute.name} #{attribute.default}\n"
+        model_factory << "\tf.#{attribute.name} #{attribute.default_value}\n"
       end
       model_factory << "end\n"
       append_file("spec/factories.rb", model_factory)
