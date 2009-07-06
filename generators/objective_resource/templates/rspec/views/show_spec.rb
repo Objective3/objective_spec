@@ -5,9 +5,6 @@ describe "/<%= table_name %>/show.<%= default_file_extension %>" do
   
   before(:each) do
     @<%= file_name %> = Factory(:<%= file_name %>)
-<% for attribute in attributes -%>
-    @<%= file_name %>.stub!(:<%= attribute.name %>).and_return(<%= attribute.default_value %>)
-<% end -%>
 
     assigns[:<%= file_name %>] = @<%= file_name %>
 
@@ -17,9 +14,6 @@ describe "/<%= table_name %>/show.<%= default_file_extension %>" do
 
   it "should render attributes in <p>" do
     render "/<%= table_name %>/show.<%= default_file_extension %>"
-<% for attribute in attributes -%><% unless attribute.name =~ /_id/ || [:datetime, :timestamp, :time, :date].index(attribute.type) -%>
-    response.should have_text(/<%= Regexp.escape(attribute.default_value)[1..-2]%>/)
-<% end -%><% end -%>
   end
 end
 

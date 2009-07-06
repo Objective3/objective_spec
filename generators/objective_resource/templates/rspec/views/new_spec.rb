@@ -6,9 +6,6 @@ describe "/<%= table_name %>/new.<%= default_file_extension %>" do
   before(:each) do
     @<%= file_name %> = Factory(:<%= file_name %>)
     @<%= file_name %>.stub!(:new_record?).and_return(true)
-<% for attribute in attributes -%>
-    @<%= file_name %>.stub!(:<%= attribute.name %>).and_return(<%= attribute.default_value %>)
-<% end -%>
     assigns[:<%= file_name %>] = @<%= file_name %>
 
 
@@ -20,11 +17,7 @@ describe "/<%= table_name %>/new.<%= default_file_extension %>" do
     render "/<%= table_name %>/new.<%= default_file_extension %>"
     
     response.should have_tag("form[action=?][method=post]", <%= table_name %>_path) do
-<% for attribute in attributes -%><% unless attribute.name =~ /_id/ || [:datetime, :timestamp, :time, :date].index(attribute.type) -%>
-      with_tag("<%= attribute.input_type -%>#<%= file_name %>_<%= attribute.name %>[name=?]", "<%= file_name %>[<%= attribute.name %>]")
-<% end -%><% end -%>
+      # Test attributes here
     end
   end
 end
-
-

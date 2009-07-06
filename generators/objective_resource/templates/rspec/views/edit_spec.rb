@@ -5,9 +5,6 @@ describe "/<%= table_name %>/edit.<%= default_file_extension %>" do
   
   before do
     @<%= file_name %> = Factory(:<%= file_name %>)
-<% for attribute in attributes -%>
-    @<%= file_name %>.stub!(:<%= attribute.name %>).and_return(<%= attribute.default_value %>)
-<% end -%>
     assigns[:<%= file_name %>] = @<%= file_name %>
 
     template.should_receive(:object_url).twice.and_return(<%= file_name %>_path(@<%= file_name %>)) 
@@ -18,9 +15,7 @@ describe "/<%= table_name %>/edit.<%= default_file_extension %>" do
     render "/<%= table_name %>/edit.<%= default_file_extension %>"
     
     response.should have_tag("form[action=#{<%= file_name %>_path(@<%= file_name %>)}][method=post]") do
-<% for attribute in attributes -%><% unless attribute.name =~ /_id/ || [:datetime, :timestamp, :time, :date].index(attribute.type) -%>
-      with_tag('<%= attribute.input_type -%>#<%= file_name %>_<%= attribute.name %>[name=?]', "<%= file_name %>[<%= attribute.name %>]")
-<% end -%><% end -%>
+      # Test attributes here
     end
   end
 end

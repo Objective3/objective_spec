@@ -6,9 +6,7 @@ describe "/<%= table_name %>/index.<%= default_file_extension %>" do
   before(:each) do
 <% [98,99].each do |id| -%>
     <%= file_name %>_<%= id %> = Factory(:<%= file_name %>)
-<% for attribute in attributes -%>
-    <%= file_name %>_<%= id %>.should_receive(:<%= attribute.name %>).and_return(<%= attribute.default_value %>)
-<% end -%><% end %>
+<% end -%>
     assigns[:<%= table_name %>] = [<%= file_name %>_98, <%= file_name %>_99]
 
     template.stub!(:object_url).and_return(<%= file_name %>_path(<%= file_name %>_99))
@@ -18,9 +16,6 @@ describe "/<%= table_name %>/index.<%= default_file_extension %>" do
 
   it "should render list of <%= table_name %>" do
     render "/<%= table_name %>/index.<%= default_file_extension %>"
-<% for attribute in attributes -%><% unless attribute.name =~ /_id/ || [:datetime, :timestamp, :time, :date].index(attribute.type) -%>
-    response.should have_tag("tr>td", <%= attribute.default_value %>, 2)
-<% end -%><% end -%>
   end
 end
 
