@@ -46,3 +46,14 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+
+task :rebuild do
+  if File.exist?('VERSION')
+    version = File.read('VERSION').chomp
+  else
+    puts "Unable to rebuild -- no VERSION.yml found"
+    exit 1
+  end
+  command = "sudo gem uninstall objective_spec; rm objective_spec-#{version}.gem objective_spec.gemspec ; rake gemspec; gem build objective_spec.gemspec && sudo gem install objective_spec-#{version}.gem"
+  puts(`#{command}`)  
+end

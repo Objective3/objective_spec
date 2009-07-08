@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "generators/objective_controller/objective_controller_generator.rb",
      "generators/objective_controller/templates/controller_spec.rb",
      "generators/objective_controller/templates/helper_spec.rb",
+     "generators/objective_controller/templates/view.html.haml",
      "generators/objective_controller/templates/view_spec.rb",
      "generators/objective_resource/.DS_Store",
      "generators/objective_resource/objective_resource_generator.rb",

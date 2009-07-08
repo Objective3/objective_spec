@@ -36,7 +36,7 @@ class ObjectiveControllerGenerator < ControllerGenerator
           File.join('spec/views', class_path, file_name, "#{action}.#{@default_file_extension}_spec.rb"),
           :assigns => { :action => action, :model => file_name }
         path = File.join('app/views', class_path, file_name, "#{action}.#{@default_file_extension}")
-        m.template "controller:view.#{@default_file_extension}",
+        m.template "view.html.haml",
           path,
           :assigns => { :action => action, :path => path }
       end
