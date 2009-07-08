@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Blake Watters"]
-  s.date = %q{2009-07-07}
+  s.date = %q{2009-07-08}
   s.email = %q{blake@objective3.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -19,6 +19,11 @@ Gem::Specification.new do |s|
      "Rakefile",
      "TODO",
      "VERSION",
+     "generators/objective_controller/USAGE",
+     "generators/objective_controller/objective_controller_generator.rb",
+     "generators/objective_controller/templates/controller_spec.rb",
+     "generators/objective_controller/templates/helper_spec.rb",
+     "generators/objective_controller/templates/view_spec.rb",
      "generators/objective_resource/.DS_Store",
      "generators/objective_resource/objective_resource_generator.rb",
      "generators/objective_resource/templates/.DS_Store",
@@ -50,7 +55,6 @@ Gem::Specification.new do |s|
      "lib/objective_spec/mailer_example_group.rb",
      "lib/objective_spec/matchers.rb",
      "lib/objective_spec/spec_helpers.rb",
-     "objective_spec.gemspec",
      "spec/objective_spec_spec.rb",
      "spec/spec_helper.rb"
   ]
