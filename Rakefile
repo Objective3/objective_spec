@@ -54,6 +54,6 @@ task :rebuild do
     puts "Unable to rebuild -- no VERSION.yml found"
     exit 1
   end
-  command = "sudo gem uninstall objective_spec; rm objective_spec-#{version}.gem objective_spec.gemspec ; rake gemspec; gem build objective_spec.gemspec && sudo gem install objective_spec-#{version}.gem"
+  command = "sudo gem uninstall objective_spec; rake gemspec; rm objective_spec-#{version}.gem objective_spec.gemspec ; rake gemspec; gem build objective_spec.gemspec && sudo gem install objective_spec-#{version}.gem"
   puts(`#{command}`)  
 end
