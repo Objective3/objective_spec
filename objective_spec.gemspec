@@ -59,6 +59,7 @@ Gem::Specification.new do |s|
      "lib/objective_spec/assets.rb",
      "lib/objective_spec/mailer_example_group.rb",
      "lib/objective_spec/matchers.rb",
+     "lib/objective_spec/matchers/use_layout_matcher.rb",
      "lib/objective_spec/spec_helpers.rb",
      "spec/objective_spec_spec.rb",
      "spec/spec_helper.rb"
