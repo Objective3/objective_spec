@@ -52,13 +52,13 @@ Gem::Specification.new do |s|
      "generators/objective_spec/templates/spec_helpers/controller.rb",
      "generators/objective_spec/templates/spec_helpers/model.rb",
      "generators/objective_spec/templates/spec_helpers/view.rb",
+     "generators/rspec_default_values.rb",
      "init.rb",
      "lib/objective_spec.rb",
      "lib/objective_spec/assets.rb",
      "lib/objective_spec/mailer_example_group.rb",
      "lib/objective_spec/matchers.rb",
      "lib/objective_spec/spec_helpers.rb",
-     "objective_spec.gemspec",
      "spec/objective_spec_spec.rb",
      "spec/spec_helper.rb"
   ]
