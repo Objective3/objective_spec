@@ -1,8 +1,31 @@
-# Load all files inside spec/matchers
-matchers_dir = File.join(Rails.root, 'spec', 'matchers')
-Dir.entries(matchers_dir).each do |entry|
-  if entry =~ /_matcher.rb$/
-    filename = entry.gsub(/.rb$/, '')
-    require File.join(matchers_dir, filename)
+module ObjectiveSpec
+  class Matchers
+    def load!
+      load_matchers_in_dir(bundled_matchers_dir)
+      load_matchers_in_dir(project_matchers_dir)
+    end
+  
+    def load_matchers_in_dir(dir)
+      Dir.entries(dir).each do |entry|
+        if entry =~ /_matcher.rb$/
+          filename = entry.gsub(/.rb$/, '')
+          require File.join(dir, filename)
+        end
+      end
+    end
+
+    def bundled_matchers_dir
+      File.join(File.dirname(__FILE__), 'matchers')
+    end
+
+    def project_matchers_dir
+      File.join(Rails.root, 'spec', 'matchers')
+    end
+
+    def self.load!
+      self.new.load!
+    end
   end
 end
+
+ObjectiveSpec::Matchers.load!
