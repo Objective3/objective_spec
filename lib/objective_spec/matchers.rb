@@ -2,7 +2,6 @@ module ObjectiveSpec
   class Matchers
     def load!
       load_matchers_in_dir(bundled_matchers_dir)
-      load_matchers_in_dir(project_matchers_dir)
     end
   
     def load_matchers_in_dir(dir)
@@ -16,10 +15,6 @@ module ObjectiveSpec
 
     def bundled_matchers_dir
       File.join(File.dirname(__FILE__), 'matchers')
-    end
-
-    def project_matchers_dir
-      File.join(Rails.root, 'spec', 'matchers')
     end
 
     def self.load!
