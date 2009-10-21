@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "objective_spec"
-    gem.summary = %Q{TODO}
+    gem.summary = "A set of extensions to RSpec for building Rails applications against Objective Spec"
     gem.email = "blake@objective3.com"
     gem.homepage = "http://github.com/Objective3/objective_spec"
     gem.authors = ["Blake Watters"]
