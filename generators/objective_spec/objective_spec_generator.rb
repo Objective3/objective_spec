@@ -14,13 +14,12 @@ INFO
   def manifest
     record do |m|
       m.directory 'spec/mailers'
-      m.directory 'spec/matchers'
-      m.directory 'spec/spec_helpers'
-      m.file      'spec_helpers/common.rb',             'spec/spec_helpers/common.rb'
-      m.file      'spec_helpers/model.rb',              'spec/spec_helpers/model.rb'
-      m.file      'spec_helpers/view.rb',               'spec/spec_helpers/view.rb'
-      m.file      'spec_helpers/controller.rb',         'spec/spec_helpers/controller.rb'
-      m.file      'spec_helpers/shared_examples.rb',    'spec/spec_helpers/shared_examples.rb'
+      m.directory 'spec/support'
+      m.file      'spec_helpers/common.rb',             'spec/support/common_spec_helper.rb'
+      m.file      'spec_helpers/model.rb',              'spec/support/model_spec_helper.rb'
+      m.file      'spec_helpers/view.rb',               'spec/support/view_spec_helper.rb'
+      m.file      'spec_helpers/controller.rb',         'spec/support/controller_spec_helper.rb'
+      m.file      'spec_helpers/shared_examples.rb',    'spec/support/shared_examples.rb'
     end
   end
   
